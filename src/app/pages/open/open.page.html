@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ">GO! Parking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  
+  <ion-img  style="width: 100%;" 
+  src="./assets/icon/logo2.png"
+  alt="logo"
+  
+  ></ion-img>
+  <ion-card>
+    <div class="container">
+      
+      
+      <section class="portfolio-experiment" >
+        <a>
+          <span class="text"[routerLink]="['/login']">Iniciar Sesion</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      </section>
+      <section class="portfolio-experiment" >
+        <a>
+          <span class="text"[routerLink]="['/singup']">Registrase</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      </section>
+    </div>
+  </ion-card>
+
+ 
+  
+    
+  
+  
+ 
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end">
+  <ion-fab-button  [routerLink]="['/empresa']">
+  <ion-icon name="build-outline" ></ion-icon>
+
+  </ion-fab-button>
+</ion-fab>  

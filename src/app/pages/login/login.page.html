@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ">GO! Parking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  
+ 
+  <ion-card>
+    <div class="container">
+      <ion-img  style="width: 100%;" 
+      src="./assets/icon/logo2.png"
+      alt="logo"
+      
+      ></ion-img>
+      </div>
+    <ion-card-header>
+      <ion-card-title style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ">Iniciar Sesion</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <form [formGroup]="loginForm" >
+        <div class="ion-no-padding">
+        <ion-item id="email">
+          <ion-input formControlName="email" placeholder="Email" type="mail"  ></ion-input>
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+        </ion-item>
+
+        <div *ngIf="this.loginForm.controls?.['email'].touched ">
+          <ion-text class="error" *ngIf="errorControl.email.errors?.requiered">
+            Email Requerido
+          </ion-text>
+          <ion-text class="error" *ngIf="errorControl.email.errors?.pattern">
+            Email invalido
+          </ion-text>
+        </div>
+
+        <ion-item id="password">  
+          <ion-input formControlName="password" placeholder="Contraseña" type="password"  required password></ion-input>
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        </ion-item>
+        <div *ngIf="this.loginForm.controls?.['password'].touched ">
+          <ion-text class="error" *ngIf="errorControl.password.errors?.requiered">
+            Contraseña Requerido
+          </ion-text>
+          <ion-text class="error" *ngIf="errorControl.password.errors?.pattern">
+            La contraeña debe contener por lo menos un caracter especial,
+            Una letra mayuscula,
+            Un numero,
+            8 caracteres minimo.
+          </ion-text>
+        </div>
+      </div>
+      <br>
+      <ion-checkbox position="end">Recordarme</ion-checkbox>
+      <br>
+      <ion-button class="botonIngresar"  (click)="login()" >Ingresar</ion-button>
+      <br>
+      <div class="registrolink">      
+          <p>¿Eres nuevo?</p><a [routerLink]="['/singup']" style="color: orange;"> Registrate Ahora</a>
+        </div>
+        
+      </form>
+        
+      
+      
+      
+      
+      
+      
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>
